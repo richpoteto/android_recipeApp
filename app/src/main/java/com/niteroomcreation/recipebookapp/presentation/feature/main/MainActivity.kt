@@ -1,5 +1,6 @@
 package com.niteroomcreation.recipebookapp.presentation.feature.main
 
+import com.niteroomcreation.recipebookapp.databinding.AMainBinding
 import com.niteroomcreation.recipebookapp.presentation.base.BaseActivity
 
 /**
@@ -10,8 +11,11 @@ class MainActivity : BaseActivity() {
 
     private val TAG = MainActivity::class.simpleName.toString()
 
+    private lateinit var binding: AMainBinding
+
     override fun onCreateInside() {
-        TODO("Not yet implemented")
+        binding = AMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
     override fun initUI() {
