@@ -2,6 +2,7 @@ package com.niteroomcreation.recipebookapp.presentation.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity
  */
 abstract class BaseActivity : AppCompatActivity() {
 
-    private val TAG: String = BaseActivity::class.simpleName.toString()
+    private val TAG = BaseActivity::class.simpleName
 
     private var mToast: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        Log.e(TAG, "onCreate: ${TAG}")
+
         super.onCreate(savedInstanceState, persistentState)
 
         mToast = Toast.makeText(this, "null", Toast.LENGTH_LONG)

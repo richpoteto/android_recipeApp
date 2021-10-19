@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/dashboard_nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_nav_graph"
+    app:startDestination="@id/action_m_feed">
+
+    <fragment
+        android:id="@+id/action_m_feed"
+        android:name="com.niteroomcreation.recipebookapp.presentation.feature.feed.FeedFragment"
+        android:label="fragment_recipe_feed"
+        tools:layout="@layout/f_empty">
+
+        <argument
+            android:name="m_key"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_m_loved"
+        android:name="com.niteroomcreation.recipebookapp.presentation.feature.loved.LovedFragment"
+        android:label="fragment_recipe_loved"
+        tools:layout="@layout/f_empty">
+
+        <argument
+            android:name="m_key"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_m_search"
+        android:name="com.niteroomcreation.recipebookapp.presentation.feature.search.SearchFragment"
+        android:label="fragment_recipe_search"
+        tools:layout="@layout/f_empty">
+
+        <argument
+            android:name="m_key"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_m_setting"
+        android:name="com.niteroomcreation.recipebookapp.presentation.feature.setting.SettingFragment"
+        android:label="fragment_recipe_setting"
+        tools:layout="@layout/f_setting">
+
+        <argument
+            android:name="m_key"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

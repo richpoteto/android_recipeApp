@@ -1,6 +1,7 @@
 package com.niteroomcreation.recipebookapp.presentation.feature.feed
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,12 @@ class FeedFragment : BaseFragment() {
     }
 
     override fun initUI() {
-        TODO("Not yet implemented")
+        Log.e(TAG, "initUI: ${TAG}" )
+
+        if (arguments != null)
+            binding.emptyTv.text = requireArguments().getString("m_key")
+        else
+            binding.emptyTv.text = "KOSONG"
     }
 
     override fun destroyUI() {

@@ -13,7 +13,8 @@
 
         <activity
             android:name=".presentation.feature.main.MainActivity"
-            android:exported="false">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />

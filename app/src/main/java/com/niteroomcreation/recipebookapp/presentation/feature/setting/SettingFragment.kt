@@ -1,10 +1,11 @@
 package com.niteroomcreation.recipebookapp.presentation.feature.setting
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.niteroomcreation.recipebookapp.databinding.FEmptyBinding
+import com.niteroomcreation.recipebookapp.databinding.FSettingBinding
 import com.niteroomcreation.recipebookapp.presentation.base.BaseFragment
 
 /**
@@ -15,7 +16,7 @@ class SettingFragment : BaseFragment() {
 
     private val TAG = SettingFragment::class.simpleName
 
-    private var _binding: FEmptyBinding? = null
+    private var _binding: FSettingBinding? = null
     private val binding get() = _binding!!
 
     override fun onInflateView(
@@ -23,11 +24,13 @@ class SettingFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FEmptyBinding.inflate(inflater, container, false)
+        _binding = FSettingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun initUI() {
+        Log.e(TAG, "initUI: ${TAG}" )
+
         TODO("Not yet implemented")
     }
 
