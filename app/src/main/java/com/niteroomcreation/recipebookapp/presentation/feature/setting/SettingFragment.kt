@@ -13,28 +13,6 @@ class SettingFragment : BaseFragment<FSettingBinding>() {
 
     private val TAG = SettingFragment::class.simpleName
 
-//    private var _binding: FSettingBinding? = null
-//    private val binding get() = _binding!!
-//
-//    override fun onInflateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        _binding = FSettingBinding.inflate(inflater, container, false)
-//        return binding.root
-//    }
-//
-//    override fun initUI() {
-//        Log.e(TAG, "initUI: ${TAG}" )
-//
-//        TODO("Not yet implemented")
-//    }
-//
-//    override fun destroyUI() {
-//        _binding = null
-//    }
-
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FSettingBinding
         get() = FSettingBinding::inflate
 

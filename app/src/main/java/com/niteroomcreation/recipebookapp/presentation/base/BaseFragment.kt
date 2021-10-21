@@ -17,35 +17,8 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     private val TAG = BaseFragment::class.simpleName.toString()
 
     private lateinit var mToast: Toast
-//    private lateinit var mViewBinding: VB
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        mToast = Toast.makeText(context, "null", Toast.LENGTH_LONG)
-//
-//        initUI()
-//    }
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        return onInflateView(inflater, container, savedInstanceState)
-//    }
-//
-//    abstract fun onInflateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View
-//
-//    abstract fun getBindingLayoutId(): VB?
 
-    //===
     private var _binding: ViewBinding? = null
-    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
 
     @Suppress("UNCHECKED_CAST")
     protected val binding: VB
@@ -65,21 +38,13 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         setup()
     }
 
+    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
     abstract fun setup()
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    //===
-
-//    abstract fun initUI()
-//    abstract fun destroyUI()
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        destroyUI()
-//    }
 
     fun showMessage(msg: String) {
         mToast.setText(msg)

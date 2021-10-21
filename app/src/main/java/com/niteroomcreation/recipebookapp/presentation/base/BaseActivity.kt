@@ -15,32 +15,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     private val TAG = BaseActivity::class.simpleName
 
     private lateinit var mToast: Toast
-//    private lateinit var mViewBinding: VB
-//
-//    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-//        Log.e(TAG, "onCreate: ${TAG}")
-//
-//        super.onCreate(savedInstanceState, persistentState)
-//
-//        if (getBindingLayoutId() != null) {
-//            mViewBinding = getBindingLayoutId()!!
-//            setContentView(mViewBinding.root)
-//
-//            onViewReady(savedInstanceState)
-//            initUI()
-//
-//        } else
-//            throw RuntimeException("Layout need to instantiate ${this::class.simpleName}")
-//
-//        mToast = Toast.makeText(this, "null", Toast.LENGTH_LONG)
-//
-//    }
-//
-//    abstract fun getBindingLayoutId(): VB?
 
-    //===
     private var _binding: ViewBinding? = null
-    abstract val bindingInflater: (LayoutInflater) -> VB
 
     @Suppress("UNCHECKED_CAST")
     protected val binding: VB
@@ -59,10 +35,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         super.onDestroy()
         _binding = null
     }
-    //===
 
-    abstract fun onViewReady(savedInstanceState: Bundle?)
-    abstract fun initUI()
+    abstract val bindingInflater: (LayoutInflater) -> VB
 
     fun showMessage(msg: String) {
         mToast.setText(msg)
