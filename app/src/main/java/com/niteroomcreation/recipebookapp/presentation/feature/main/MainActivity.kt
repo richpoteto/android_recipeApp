@@ -2,6 +2,7 @@ package com.niteroomcreation.recipebookapp.presentation.feature.main
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -14,22 +15,36 @@ import com.niteroomcreation.recipebookapp.presentation.base.BaseActivity
  * Created by Septian Adi Wijaya on 19/10/2021.
  * please be sure to add credential if you use people's code
  */
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<AMainBinding>() {
 
     private val TAG = MainActivity::class.simpleName
 
-    private lateinit var binding: AMainBinding
     private lateinit var navigation: NavHostFragment
+//    private lateinit var binding: AMainBinding
+//
+//    override fun getBindingLayoutId(): AMainBinding? {
+//        return AMainBinding.inflate(layoutInflater)
+//    }
 
-    override fun onCreateInside() {
-        binding = AMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    //===
+    override val bindingInflater: (LayoutInflater) -> AMainBinding
+        get() = AMainBinding::inflate
+
+    override fun setup() {
+        setupNavigation()
+    }
+    //===
+
+
+    override fun onViewReady(savedInstanceState: Bundle?) {
+//        binding = AMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
     }
 
     override fun initUI() {
-        Log.e(TAG, "initUI: ${TAG}" )
+        Log.e(TAG, "initUI: ${TAG}")
 
-        setupNavigation()
+//        setupNavigation()
     }
 
     private fun setupNavigation() {
